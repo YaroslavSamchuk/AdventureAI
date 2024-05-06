@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="{% static 'Main/style.css' %}">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="{% static 'Main/wow.min.js'%}"></script>
+    <!-- <script src="{% static 'Main/js.js' %}"></script>  -->
+    <script>
+        new WOW().init();
+    </script>
+    <title>Home</title> 
+</head>
+<body>
+    <header>
+        <h2 class="header-div" id='tittle-site'><img width="70px" id="logo" src="{% static 'Main/2.png' %}" alt="Logo">Adventure AI</h2>
+        <a class="header-div" href="{% url 'home'%}" style="font-size: 20px;">Головна</a>
+        <a class="header-div" href="{% url 'play'%}" style="font-size: 20px;">Грати</a>
+    </header>
+    <main>
+        <div >
+            <div id="div1" class="wow bounceInLeft animated" ><p>Adventure AI: ваш шлях до нескінченних пригод</p></div>
+            <div id="div2" class="wow bounceInLeft animated" data-wow-offset="-10"  >
+                <div id="element1">
+                    <p>Вирушайте в незабутню подорож з Adventure AI, де кожне ваше рішення - це крок до епічної пригоди. Ця надсучасна програма використовує штучний інтелект для створення унікальної розповіді, такої ж неповторної, як і ви.</p>
+                </div>
+            </div>
+        </div>
+        <div >
+            <div id="div3" class="wow fadeInDownBig animated" >
+                <img id="element2" src="https://visuals.share.voyage/cdn-cgi/imagedelivery/DPSHeCXswmvoQXsmqJ-mDA/1ffe4148-2df1-4b79-b01e-205b5d132a00/thumb"></img>
+                <p class="text wow fadeInUpBig animated" data-wow-delay="0.5s">Adventure AI виводить вас за межі традиційних ігор, пропонуючи глибоко занурюючий досвід, який адаптується та розвивається в режимі реального часу. Від відлуння стародавніх підземель до шепоту прихованих лісів, кожен куточок Adventure AI - це нова пригода, яка чекає на вас.</p>
+            </div>
+            <div id="div4" class="wow bounceInLeft animated" >
+                <p class="text wow fadeInUpBig animated" data-wow-delay="0.5s" >Але Adventure AI - це більше, ніж просто гра, це платформа для розповіді історій. Завдяки динамічному наративному движку ви не просто граєте, ви стаєте частиною історії. Кожен вибір, який ви робите, кожен виклик, з яким ви стикаєтесь, і кожна таємниця, яку ви розкриваєте, додає нову главу до вашої пригоди.</p>
+                <img id="element3" src="https://visuals.share.voyage/cdn-cgi/imagedelivery/DPSHeCXswmvoQXsmqJ-mDA/4d5bed96-4083-477c-8a31-e2e801fae800/thumb"></img>
+            </div>
+            <div id="div5" class="wow bounceInRight animated" >
+                <p class="text wow fadeInUpBig animated" data-wow-delay="0.5s">Приєднуйтесь до нас у цьому епічному квесті та відкрийте для себе нерозказані історії, які чекають на вас. З Adventure AI кожна пригода - це новий початок.</p>
+                <img id="element4" src="https://visuals.share.voyage/cdn-cgi/imagedelivery/DPSHeCXswmvoQXsmqJ-mDA/9f7bca4e-7a4a-4cb9-baf6-93e10b57a300/public" ></img>
+            </div>
+        </div>
+        <div>
+            <div id="div1" class="wow tada animated"><p>Adventure AI технології</p></div>
+            <div id="div4" class="wow bounceInLeft animated" >
+                <p class="text wow fadeInUpBig  animated" data-wow-delay="0.5s" >"Command r plus" - це вдосконалена модель штучного інтелекту, розроблена компанією Adventure AI для розширення можливостей створення інтерактивних та захопливих оповідань для рольових ігор (RPG). Ця модель вирізняється здатністю розуміти та реагувати на широкий спектр команд, що робить її надзвичайно універсальною для створення динамічних і захопливих сюжетних ліній.</p>
+                <img id="element5" src="https://github.com/ollama/ollama/assets/251292/566287ce-99c9-40c1-81d4-3dd354447fd7" loading="eager">
+            </div>
+            <div id="div5" class="wow bounceInLeft animated" >
+                <p class="text wow fadeInUpBig  animated" data-wow-delay="0.5s" >Модель "command r plus" побудована на основі передових методів обробки природної мови (NLP), що дозволяє їй розбирати і розуміти складні команди в природний та інтуїтивний спосіб.
+                    Однією з ключових особливостей моделі "command r plus" є її здатність зберігати контекст і безперервність розповіді. Вона відстежує стан історії, включаючи відвідані локації, виконані дії та стосунки, що формуються з персонажами. Таке розуміння контексту дозволяє ШІ генерувати відповіді, які відповідають встановленій історії та попереднім діям гравця.</p>
+                <img id="element6" src="https://openrouter.ai/models/cohere/command-r-plus/opengraph-image-593mwk?f7dfc308d8e703a4" loading="eager">
+            </div>
+        </div>
+    </main>
+    <footer>
+        <h3>Власник: Ярослав Самчук</h3>
+        <h3>Ідея: Ярослав Самчук</h3>
+        <h3>Дизайн: Ярослав Самчук</h3>
+        <h3>Розробник: Ярослав Самчук</h3>
+        <h2>samchukyaroslav@gmail.com</h3>
+        <h2>+4555241752</h3>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="{% static 'Main/style.css' %}">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="{% static 'Main/wow.min.js'%}"></script>
+    <script src="{% static 'Main/js.js' %}" defer></script> 
+    <script>
+        new WOW().init();
+    </script>
+    <title>Play</title>
+</head>
+<body>
+    <header>
+        <h2 class="header-div" id='tittle-site'><img width="70px" src="{% static 'Main/2.png' %}" alt="Logo">Adventure AI</h2>
+        <a class="header-div" href="{% url 'home'%}" style="font-size: 20px;">Головна</a>
+        <a class="header-div" href="{% url 'play'%}" style="font-size: 20px;">Грати</a>
+    </header>
+    <main>
+    </main>
+    <footer>
+        <input type='text' id='url' value="{% url 'game' %}" hidden>
+        <input type='text' id='url1' value="{% url 'chat' %}" hidden>
+        <input type='text' id='url2' value="{% url 'getgame' %}" hidden>
+        {% csrf_token %}
+        <!-- <div class="radio-div">
+            <input type='radio' id='radio1' name='radio' value='/do'>
+            <label for="radio1">Do</label>
+            <input type='radio' id='radio2' name='radio' value='/say'>
+            <label for="radio2">Say</label>
+            <input type='radio' id='radio3' name='radio' value='/story'>
+            <label for="radio3">Story</label>
+        </div> -->
+        
+    </footer>
+</body>
+</html>
