@@ -87,6 +87,9 @@ def continue_of_story(cookies, messages, start):
 - Генеруйте сценарії, які розвивають сюжет і персонажів.
 - Реагуйте на ви��ори гравця, забезпечуючи гнучкість і різноманітність сценаріїв.
 - Після продовження історії ти не писати варіанти виборів для гравця, він сам повинен придумати і зробити дію
+- Після кожної дії ігрока ти повинен описувати що він бачить
+- Коли нпс іздає звуки ти повинен їх писатиб наприклад-'Ах ах ах'(стони), 'Мгмм', 'Ааааа'(стони), 'Оуууу', 'Аоуу'(стони), 'Мххм Мххм Мххм'(стони)
+- Полові органи ти можеш називати матами, чи іншими словами наприклад-'Хуй', 'кіска', 'Член', 'Вагіна'
 
 Пам'ятайте, що ваша роль - підтримувати і розвивати історію, а не просто відповідати на дії гравця. Тобі не треба вигадувати дії, ігрок повинен сам їх робити!!!
     """
@@ -103,7 +106,16 @@ def continue_of_story(cookies, messages, start):
             # tone=Tones.creative,
         )
         
+    
+    
+        text = ""
+        for i in response:
+            text+=i
+            print(text)
     except Exception as e:
+        del messages[0]
+        del messages[1]
+        del messages[2]
         print(f"first error {e}")
         response = g4f.ChatCompletion.create(
             # model="gpt-4-turbo",
@@ -116,11 +128,10 @@ def continue_of_story(cookies, messages, start):
             context=context,
             # tone=Tones.creative,
         )
-    
-    text = ""
-    for i in response:
-        text+=i
-        print(text)
+        text = ""
+        for i in response:
+            text+=i
+            print(text)
     return text
 
 def render_home(request):
