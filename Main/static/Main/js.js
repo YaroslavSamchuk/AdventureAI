@@ -24,6 +24,9 @@ const themes = {
     "Zombies" : ["Survivor", "Soldier", "Scientist"],
     "Apocalyptic" : ["Survivor", "Soldier", "Courier"],
     "Cyberpunk" : ["Cyborg", "Punk", "Cop", "Android"],
+    "Modern World" : ["President", "Simple Human", "Cop", "Killer", "Businessman", "Hacker"],
+    "Secuond World War" : ["President", "Solider", "Comander", "General"],
+    "Vampire" : ["Vampire", "Werewolf", "Witch", "Noble", "Princess", "Knight", "Ranger", "Peasant", "Rogue"],
 }
 var mainTheme
 var mainRole
@@ -35,7 +38,6 @@ $(document).ready(function(){
     for (var theme in themes) {
         $("main").append(`<button class='button' id='${theme}'>${theme}</button>`)
         $(`.button`).on( "click", function(){
-            console.log(this.id)
             theme = this.id
             mainTheme = theme
             $("main").replaceWith("<main></main>")
@@ -46,9 +48,7 @@ $(document).ready(function(){
                 $(`#connect`).css("margin", `8px`)
                 $(`#connect`).css("border", `0px solid black`)
                 $("main").replaceWith(`<main><div id='name-inputs' ><input id="name" placeholder="ID" type="text"><button id="butt">Confirm</button></main>`)
-                console.log('0000')
                 $("#butt").on("click", function(){
-                    console.log('1111')
                     $.ajax({
                         url: $("#url2").val(),
                         method: "GET",
@@ -56,11 +56,8 @@ $(document).ready(function(){
                             'id' : $("#name").val(),
                         },
                         success: function(response) {
-                            console.log(response)
                             ip = response["ip"]
                             start = response["start"]
-                            console.log(ip)
-                            console.log(start)
                             $("main").replaceWith(`
                             <main>
                                 <div id='chat'>
@@ -106,7 +103,6 @@ $(document).ready(function(){
                                 $("#scroll").remove()
                                 var text = $("#textarea").val()
                                 var selectedAction = $('input[name=radio]:checked').val(); // Отримуємо значення вибраної радіо-кнопки
-                                console.log(selectedAction); // Виводимо значення вибраної радіо-кнопки в консоль
                                 if (selectedAction == "/do"){
                                     var text = `Ігрок робить: '${text}',Ти повинен трохи продовжити історію (1-2 речення), до наступного вибору для гравця`
                                 } else if (selectedAction == "/say"){
@@ -118,7 +114,6 @@ $(document).ready(function(){
                                 $("#chat").append(`<div class='action'><p>${$("#textarea").val()}</p></div>`)
                                 $("#chat").append(`<div class='loading-message wow flash infinite animated'><p>Please wait, it's loading</p></div>`)
                                 $("#chat").append(`<div class='message' id='scroll'><p></p></div>`)
-                                console.log(text)
                                 $("#textarea").val("")
                                 $("#textarea").prop('disabled', true)
                                 $("#send-button").prop('disabled', true)
@@ -155,7 +150,6 @@ $(document).ready(function(){
                     
                 }
                 $(`.button`).on( "click", function(){
-                    console.log(this.id)
                     // mainRole =
                     role = this.id
                     $("main").replaceWith("<main></main>")
@@ -239,7 +233,6 @@ $(document).ready(function(){
                                 $("#send-button").on("click", async function(){
                                     var text = $("#textarea").val()
                                     var selectedAction = $('input[name=radio]:checked').val(); // Отримуємо значення вибраної радіо-кнопки
-                                    console.log(selectedAction); // Виводимо значення вибраної радіо-кнопки в консоль
                                     if (selectedAction == "/do"){
                                         var text = `Ігрок робить: '${text}',Ти повинен трохи продовжити історію (1-2 речення), до наступного вибору для гравця`
                                     } else if (selectedAction == "/say"){
@@ -251,7 +244,6 @@ $(document).ready(function(){
                                     $("#chat").append(`<div class='action'><p>${$("#textarea").val()}</p></div>`)
                                     $("#chat").append(`<div class='loading-message wow flash infinite animated'><p>Please wait, it's loading</p></div>`)
                                     $("#chat").append(`<div class='message' id='scroll'><p></p></div>`)
-                                    console.log(text)
                                     $("#textarea").val("")
                                     $("#textarea").prop('disabled', true)
                                     $("#send-button").prop('disabled', true)
@@ -291,19 +283,19 @@ $(document).ready(function(){
     $(".button").css("width", `${window.innerWidth-((window.innerWidth/100)*20)}px`)
     $(".button").css("border-radius", `8px`)
     $(".button").css("margin", `5px`)
-    $(".button").css("border", `0px solid black`)
+    $(".button").css("border", `1px solid rgb(71, 71, 71)`)
     $('#scroll').css("height", "200px")
     $(".button").hover(function(){
         $(this).css("background-color", "#F7A300")
         $(this).css("box-shadow", "0px 0px 10px 2px #ffb116")
         $(this).css("margin-top", "20px")
         $(this).css("margin-bottom", "20px")
-        $(this).css("border", `0px solid black`)
+        $(this).css("border", `1px solid rgb(71, 71, 71)`)
     }, function(){
         $(this).css("width", `${window.innerWidth-((window.innerWidth/100)*20)}px`)
         $(this).css("border-radius", `8px`)
         $(this).css("margin", `5px`)
-        $(this).css("border", `0px solid black`)
+        $(this).css("border", `1px solid rgb(71, 71, 71)`)
         $(this).css("background-color", `rgb(71, 71, 71)`)
         $(this).css("box-shadow", `0px 0px 0px 0px #ffb116`)
     }

@@ -223,7 +223,9 @@ main {
     height: 64px;
     background-color: rgb(71, 71, 71);
     cursor: pointer;
+    text-align: center;
     margin: 20px;
+    border-radius: 12px;
     border: 0px solid black; 
     transition: all 1s;
 }
@@ -427,9 +429,9 @@ main {
 }
 
 footer {
-    padding-left: 20px;
+    padding-left: 40px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     box-shadow: 0px 0px 25px 5px black;
     background-color: rgba(0, 0, 0, 0.767);
 }
@@ -547,4 +549,106 @@ footer {
         width: 95%;
         border-radius: 20px;
     }
+}
+
+#form-div {
+    display: flex;
+    flex-direction: column;
+
+}
+
+#form-prop {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+#input {
+    margin: 0px 0px 0px 0px;
+    padding: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px 2px black;
+    resize: none;
+    background-color: rgba(36, 36, 36, 0.553);
+    transition: all 0.5s;
+}
+#input:hover, #input:focus {
+    box-shadow: 0px 0px 10px 2px rgb(255, 191, 0);
+    border: 0px solid black;
+}
+
+
+#proposition {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    background-color: rgba(23, 23, 23, 0.589);
+    border-radius: 12px;
+    text-align: center;
+    padding: 20px;
+    color: rgb(195, 195, 195);
+    transition: all 0.5s;
+}
+#proposition:hover {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    background-color: rgba(23, 23, 23, 0.589);
+    border-radius: 12px;
+    text-align: center;
+    padding: 20px;
+    transition: all 0.5s;
+    box-shadow: 0px 0px 10px 2px#F7A300;
+}
+
+#propositions {
+    width: 90%;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+#footer {
+    display: flex;
+    flex-direction: column;
+}
+
+#footer1 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#linkto {
+    display: inline-block;
+}
+
+.button1 {
+    display:block;
+    height: 64px;
+    color: black;
+    background-color: rgb(71, 71, 71);
+    cursor: pointer;
+    text-align: center; 
+    vertical-align: middle;
+    margin: 20px;
+    border-radius: 12px;
+    border: 0px solid black; 
+    transition: all 1s;
+}
+
+.button1 h3 {
+    color: black;
+}
+
+.button1:hover, .button1:focus {
+    background-color: #F7A300;
+    box-shadow: 0px 0px 10px 2px #ffb116;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }

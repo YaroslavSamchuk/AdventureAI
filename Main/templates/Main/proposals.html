@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="{% static 'Main/style.css' %}">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="{% static 'Main/wow.min.js'%}"></script>
+    <!-- <script src="{% static 'Main/js.js' %}"></script>  -->
+    <script>
+        new WOW().init();
+    </script>
+    <title>Home</title> 
+</head>
+<body>
+    <header>
+        <h2 class="header-div" id='tittle-site'><img width="70px" id="logo" src="https://staticfiles-7ncx.onrender.com/2.png" alt="Logo">Adventure AI</h2>
+        <a class="header-div" href="{% url 'home'%}" style="font-size: 20px;">Головна</a>
+        <a class="header-div" href="{% url 'play'%}" style="font-size: 20px;">Грати</a>
+    </header>
+    <main>
+        <div id="div1" class="wow bounceInLeft animated" ><p>Adventure AI: ваші пропозиції</p></div>
+        <div id="form-div">
+            <h2>Напишіть як більш детально про вашу пропозицію</h2>
+            <form method="POST" id="form-prop">
+                {% csrf_token %}
+                <input type="text" id="input" name="theme" placeholder="Тема">
+                <textarea type="text" id="input" name="text" placeholder="Ваша пропозиція"></textarea>
+                <input type="submit" class="button" value="Відправити">
+            </form>
+        </div>
+        <h2>Пропозиції</h2>
+        <div id="propositions">
+            {% for proposition in propositions %}
+                <div id="proposition">
+                    <h2>{{ proposition.theme }}</h2>
+                    <p>{{ proposition.text }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+    <footer>
+        <div id="footer">
+            <h3>Власник: Ярослав Самчук</h3>
+            <h3>Ідея: Ярослав Самчук</h3>
+            <h3>Дизайн: Ярослав Самчук</h3>
+            <h3>Розробник: Ярослав Самчук</h3>
+            <h2>samchukyaroslav@gmail.com</h3>
+            <h2>+4555241752</h3>
+        </div>
+    </footer>
+</body>
+</html>

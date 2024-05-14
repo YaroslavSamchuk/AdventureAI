@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ua">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,12 +57,21 @@
         </div>
     </main>
     <footer>
-        <h3>Власник: Ярослав Самчук</h3>
-        <h3>Ідея: Ярослав Самчук</h3>
-        <h3>Дизайн: Ярослав Самчук</h3>
-        <h3>Розробник: Ярослав Самчук</h3>
-        <h2>samchukyaroslav@gmail.com</h3>
-        <h2>+4555241752</h3>
+        <div id="footer">
+            <h3>Власник: Ярослав Самчук</h3>
+            <h3>Ідея: Ярослав Самчук</h3>
+            <h3>Дизайн: Ярослав Самчук</h3>
+            <h3>Розробник: Ярослав Самчук</h3>
+            <h2>samchukyaroslav@gmail.com</h3>
+            <h2>+4555241752</h3>
+        </div>
+        <div id="footer1">
+            <h2>Маєте пропозиції щодо оновлення гри чи як вдосконалити її?</h2>
+            <h2>Ваша пропозиція дуже важлива для нас</h2>
+            <a  class="button1" href="{% url 'propositions' %}" id="linkto">
+                <h3>Відправити пропозицію</h3>
+            </a>
+        </div>
     </footer>
 </body>
 </html>
