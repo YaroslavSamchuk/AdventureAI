@@ -303,6 +303,7 @@ main {
     margin: 20px;
 }
 
+
 #field {
     color: white;
     font-weight: bold;
@@ -332,7 +333,6 @@ main {
 .loading-message {
     margin: 20px 40px 20px 40px;
     padding: 15px 25px rgb(75, 75, 75);
-    box-shadow: 0px 0px 10px 1px rgb(247, 178, 18);
 }
 
 #flexfield {
@@ -436,7 +436,16 @@ footer {
     background-color: rgba(0, 0, 0, 0.767);
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1000px) {
+    .message {
+        padding-right: 5px;
+        padding-left: 5px;
+        margin: 5px;
+        font-size: 22px;
+    }
+    .message p {
+        font-size: 22px;
+    }
     #name {
         width: 200px;
     }
@@ -549,6 +558,18 @@ footer {
         width: 95%;
         border-radius: 20px;
     }
+    footer {
+        padding-left: 0px;
+        display: flex;
+        flex-direction: row;
+        box-shadow: 0px 0px 25px 5px black;
+        background-color: rgba(0, 0, 0, 0.767);
+        font-size: 14px;
+    }
+    #footer1 {
+        font-size: 15px;
+    }
+    
 }
 
 #form-div {

@@ -32,7 +32,7 @@ def get_client_ip(request):
     return ip
 
 def create_start_of_story(cookies, theme, role, name):
-    messages = [{"role" : "system", "content" : "Do you know DungeonAI RPG game? You are a copy of Dungeon AI RPG game please write ONLY story in your response (5 sentences)"}]
+    messages = [{"role" : "system", "content" : "Do you know DungeonAI RPG game? You are a copy of Dungeon AI RPG game-'AdventureAI', please write ONLY story in your response (5 sentences)"}]
     messages.append({"role": "user", "content" : f"can you create a start of story, theme-'{theme}' player role-'{role}' language:'ukrainian', you must TALK story with player to player with name '{name}' think of a place where the story begins(contry, castle) and mission, You have to write where the hero starts (place (bed, table, street) and village/town/city) (home, office, work, shop, street, etc.),  You should also write down all the absolute sounds (moans, screams, reactions) like: (Aaaa, mgmm, ahhhhhhh)"})
     print(messages)
     try:
@@ -119,7 +119,7 @@ def continue_of_story(cookies, messages, start):
         response = g4f.ChatCompletion.create(
             # model="gpt-4-turbo",
             # provider=g4f.Provider.Bing,
-            model=g4f.models.mixtral_8x22b,
+            model=g4f.models.command_r_plus,
             provider=g4f.Provider.HuggingChat,
             messages=messages,
             stream=True,

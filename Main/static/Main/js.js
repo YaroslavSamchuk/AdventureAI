@@ -24,9 +24,13 @@ const themes = {
     "Zombies" : ["Survivor", "Soldier", "Scientist"],
     "Apocalyptic" : ["Survivor", "Soldier", "Courier"],
     "Cyberpunk" : ["Cyborg", "Punk", "Cop", "Android"],
-    "Modern World" : ["President", "Simple Human", "Cop", "Killer", "Businessman", "Hacker"],
+    "Modern World" : ["President", "Simple_Human", "Cop", "Killer", "Businessman", "Hacker"],
     "Secuond World War" : ["President", "Solider", "Comander", "General"],
     "Vampire" : ["Vampire", "Werewolf", "Witch", "Noble", "Princess", "Knight", "Ranger", "Peasant", "Rogue"],
+    "Lost in Time" : ["Historian", "Adventurer", "Magician"],
+    "Space Odyssey" : ["Astronaut", "Engineer", "Alien"],
+    "Robot War" : ["Resistance_leader", "Hacker", "Soldier", "Leader_of_the_restraints"],
+
 }
 var mainTheme
 var mainRole
@@ -143,7 +147,7 @@ $(document).ready(function(){
             } else {
                 for (var role in themes[theme]) {
                     $("main").append(`<button class='button' id='${themes[theme][role]}'>${themes[theme][role]}</button>`)
-                    $(`#${themes[theme][role]}`).css("width", `${window.innerWidth-((window.innerWidth/100)*40)}px`)
+                    $(`#${themes[theme][role]}`).css("width", `${window.innerWidth-((window.innerWidth/100)*20)}px`)
                     $(`#${themes[theme][role]}`).css("border-radius", `8px`)
                     $(`#${themes[theme][role]}`).css("margin", `8px`)
                     $(`#${themes[theme][role]}`).css("border", `0px solid black`)
@@ -157,7 +161,7 @@ $(document).ready(function(){
                     $("main").replaceWith(`<main><div id='name-inputs'><input id="name" type="text"><button id="butt">Confirm</button></div></main>`)
                     $("#butt").on("click", function(){
                         var name = $("#name").val()
-                        $("main").replaceWith("<main><h2>Завантажується, будь ласка почекайте</h2></main>")
+                        $("main").replaceWith("<main><h3>Завантажується, будь ласка почекайте</h3></main>")
             
                         $.ajax({
                             url: $("#url").val(),
